@@ -1,4 +1,4 @@
-# Imgur Unblock Firefox Extension
+# Imgur Unblock For Chrome
 
 **Imgur Unblock - Access Imgur in the UK**
 
@@ -66,4 +66,5 @@ discontinued at any time.
 ---
 
 **Built with ❤️ to bypass unnecessary censorship**
+
 
