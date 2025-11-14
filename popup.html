@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Imgur Unblock</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 300px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+      color: #fff;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .header h1 {
+      font-size: 18px;
+      background: linear-gradient(135deg, #00d4aa 0%, #008296 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    
+    .header p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .status {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00d4aa;
+      box-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+    }
+    
+    .status-dot.disabled {
+      background: #ff6b42;
+      box-shadow: 0 0 10px rgba(255, 107, 66, 0.5);
+    }
+    
+    .status-text {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .stats {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .stats div {
+      margin-top: 4px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(135deg, #00d4aa 0%, #008296 100%);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 8px;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    button.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    button.secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: none;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer a {
+      color: #00d4aa;
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer a:hover {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🖼️ Imgur Unblock</h1>
+    <p>Proxy via imgup.uk</p>
+  </div>
+  
+  <div class="status">
+    <div class="status-indicator">
+      <div class="status-dot" id="statusDot"></div>
+      <div class="status-text" id="statusText">Loading...</div>
+    </div>
+    <div class="stats">
+      <div>📊 Images proxied: <strong id="statsProxied">0</strong></div>
+      <div>🌍 Server: Germany (IONOS)</div>
+    </div>
+  </div>
+  
+  <button id="toggleBtn">Toggle Extension</button>
+  <button id="resetBtn" class="secondary">Reset Stats</button>
+  
+  <div class="footer">
+    <a href="https://imgup.uk" target="_blank">Visit imgup.uk</a>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

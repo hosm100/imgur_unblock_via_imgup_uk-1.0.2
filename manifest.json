@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Imgur Unblock (via imgup.uk)",
+  "version": "1.0.3",
+  "description": "Access Imgur images in the UK by proxying through imgup.uk's German server. No storage, pure relay.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+
+  "host_permissions": [
+    "*://*.imgur.com/*",
+    "*://i.stack.imgur.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "content.js" ],
+      "run_at": "document_end"
+    }
+  ],
+
+  "action": {
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    },
+    "default_title": "Imgur Unblock",
+    "default_popup": "popup.html"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [ "icons/*" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ],
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "imgur_redirect",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
